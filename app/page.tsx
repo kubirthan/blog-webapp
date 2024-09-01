@@ -8,7 +8,7 @@ export default function Home() {
   const [posts, setPosts] = useState([])
 
   useEffect(()=> {
-    fetch(process.env.API_URL+'/posts')
+    fetch(process.env.NEXT_PUBLIC_API_URL+'/posts')
     .then((res) => res.json())
     .then(res => setPosts(res))
   }, [])
@@ -28,9 +28,9 @@ export default function Home() {
   </div>
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {posts.map((post) => (<div className="border border-gray-200 p-4">
-          <img className="w-full h-48 object-cover mb-4" src="https://picsum.photos/200" alt="Post Image"/>
-          <h2 className="text-xl font-semibold mb-2">Post Title 1</h2>
-          <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <img className="w-full h-48 object-cover mb-4" src={post.image} alt="Post Image"/>
+          <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+          <p className="text-gray-600">{post.description}</p>
         </div>))}
     </div>
   </>
