@@ -10,7 +10,7 @@ export default function Header() {
           <Link href="/" className="text-blue-500">
             Home
           </Link>
-          <Link href="/about" className="text-blue-500">7
+          <Link href="/about" className="text-blue-500">
             About
           </Link>
           <Link href="/contact" className="text-blue-500">
