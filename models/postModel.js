@@ -1,4 +1,4 @@
-import { Model, Schema } from "mongoose";
+import { model, Schema, models } from "mongoose";
 
 const postSchema = new Schema({
     title: String,
@@ -6,6 +6,6 @@ const postSchema = new Schema({
     image: String
 })
 
-const postModel = Model('Post', postSchema)
+const postModel = models.Post ||  model('Post', postSchema)
 
 export default postModel
